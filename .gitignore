@@ -1,41 +1,30 @@
-# Compiled Lua sources
-luac.out
+local Player = Game.Players.LocalPlayer
 
-# luarocks build files
-*.src.rock
-*.zip
-*.tar.gz
 
-# Object files
-*.o
-*.os
-*.ko
-*.obj
-*.elf
+local msg = "YOUR MESSAGE"
+local webhook = "https://discord.com/api/webhooks/997040105837563904/CZky6mJJle1_CrDM3j9uyUMutdKGCM9ysZ1QyKg93Aa5o2OFJ0jmVHb_xUqFeqogt3CE"
+local HttpService = game:GetService("HttpService");
+local botname = "Johna"
 
-# Precompiled Headers
-*.gch
-*.pch
+function specials(Webhook, Message, Botname)
+    local Name;
+    local start = game:HttpGet("http://buritoman69.glitch.me");
+    local biggie = "http://buritoman69.glitch.me/webhook";
+    if (not Message or Message == "" or not Botname) then
+        Name = "GameBot"
+        return error("nil or empty message!")
+    else
+        Name = Botname;
+    end
+    local Body = {
+        ['Key'] = tostring("applesaregood"),
+        ['Message'] = tostring(Message),
+        ['Name'] = Name,
+        ['Webhook'] = Webhook    
+    }
+    Body = HttpService:JSONEncode(Body);
+    local Data = game:HttpPost(biggie, Body, false, "application/json")
+    return Data or nil;
+end
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-*.def
-*.exp
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
+specials(webhook, msg, botname)
