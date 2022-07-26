@@ -1,10 +1,10 @@
-local Player = Game.Players.LocalPlayer
+local Player = game.Players.LocalPlayer
 
 
-local msg = "YOUR MESSAGE"
-local webhook = "https://discord.com/api/webhooks/997040105837563904/CZky6mJJle1_CrDM3j9uyUMutdKGCM9ysZ1QyKg93Aa5o2OFJ0jmVHb_xUqFeqogt3CE"
+local msg = "**"..Player.Name.."** has successfully logged into ***Annon Hub***"
+local webhook = "https://discord.com/api/webhooks/1001371210074042461/TnlW2ECFmM402HH_oLZT4Ux-tDhMjBnou48CjtR6oY72DNUFgBouRZAdrngqsQwR_z6v"
 local HttpService = game:GetService("HttpService");
-local botname = "Johna"
+local botname = "Logged In"
 
 function specials(Webhook, Message, Botname)
     local Name;
